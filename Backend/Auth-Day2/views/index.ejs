@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth2</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+   
+
+    <div class="w-full h-screen bg-zinc-900 text-white p-10">
+        <h3 class=" text-3xl mb-10 text-white-700">Create a User</h3>
+        <form method = "post" action = "/create">
+
+            <input type="text"  class = "px-3 py-2 text-white outline-none rounded-md bg-transparent border-2 border-zinc-800 "placeholder="User Name" name="userName"/>
+            <input type="email"  class = "px-3 py-2 text-white outline-none rounded-md bg-transparent border-2 border-zinc-800"placeholder="Email" name="email"/>
+            <input type="password"  class = "px-3 py-2 text-white outline-none rounded-md bg-transparent border-2 border-zinc-800 "placeholder="Password" name="password"/>
+            <input type="text" class = "px-3 py-2 text-white outline-none rounded-md bg-transparent border-2 border-zinc-800 " placeholder="Age" name="age"/>
+            <input type="submit" class="px-4 py-2 rounded-md bg-blue-400" value="Create User">
+
+            </form>
+    </div>
+
+
+</body>
+</html>
