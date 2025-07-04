@@ -2,6 +2,12 @@
 
 This is a simple Node.js + Express application demonstrating **user registration**, **login**, **logout**, and **profile access** using **JWT**, **bcrypt**, and **cookies**.
 
+## 📝 **Prerequisites**
+
+- Node.js and npm installed
+- MongoDB instance (local or Atlas)
+
+
 ---
 
 ## 📚 **Features**
