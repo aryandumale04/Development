@@ -4,7 +4,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/miniproject")
 
 //defining the shema  
  const userSchema = mongoose.Schema({
-    userName : String,
+    username : String,
     name : String,
     age : Number,
     email : String,
