@@ -171,6 +171,5 @@ app.post("/update/:id", isLoggedIn , async (req,res)=>{
     
 
 
-})
-
+})//need to change this as we are deploying because it forces a particular port 
 app.listen(3000);
