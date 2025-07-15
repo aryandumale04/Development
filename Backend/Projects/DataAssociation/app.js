@@ -1,5 +1,7 @@
 const express = require("express")
 const app = express ()
+const path = require("path")
+
 
 //require the user schema
 const userModel = require("./models/user");
@@ -9,10 +11,13 @@ const bcrypt =  require("bcrypt");
 const jwt =  require("jsonwebtoken");
 const user = require("./models/user");
 
+const upload = require("./utils/multerconfig")
+
 
 
 //set view engine set karna 
 app.set("view engine","ejs");
+app.use(express.static(path.join(__dirname,"public")));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(cookieParser());// so that we can read cookie
@@ -37,8 +42,18 @@ app.get("/" ,(req,res) => {
     res.render("index");
 })
 
+app.get("/profile/upload", (req,res)=>{
+    res.render("profilePic");
+})
+
 app.get("/login",(req,res)=>{
     res.render("login")
+})
+app.post("/upload", isLoggedIn,upload.single("image"),async (req,res)=>{
+    let user = await userModel.findOne({email : req.user.email});
+    user.profilePic = req.file.filename;
+    await user.save();
+    res.redirect("/profile");
 })
 
 // create route 

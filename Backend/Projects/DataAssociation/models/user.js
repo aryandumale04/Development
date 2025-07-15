@@ -10,6 +10,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/miniproject")
     age : Number,
     email : String,
     password : String,
+    profilePic  : {
+        type : String,
+        default : "default.webp"
+    },
     posts : [{
         type : mongoose.Schema.Types.ObjectId,
         ref : "post"
